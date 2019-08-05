@@ -1,0 +1,10 @@
+*.off
+*.old
+*.tmp
+*.obj
+*.bin
+*.com
+*.exe
+*.sym
+*.lk1
+*.map

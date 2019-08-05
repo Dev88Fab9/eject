@@ -1,0 +1,68 @@
+!define BLANK ""
+G:\apps\C\eject\eject-1.0b\DOS_error.obj : G:\apps\C\eject\eject-1.0b\DOS_er&
+ror.c .AUTODEPEND
+ @G:
+ cd G:\apps\C\eject\eject-1.0b
+ *wcc386 DOS_error.c -i=h:\Programmi\programmazione\C\WATCOM\WATCOM1.5\h;h:\&
+Programmi\programmazione\C\WATCOM\WATCOM1.5\h\nt -w4 -e25 -zq -od -d2 -6r -b&
+t=nt -mf
+
+G:\apps\C\eject\eject-1.0b\Eject.obj : G:\apps\C\eject\eject-1.0b\Eject.c .A&
+UTODEPEND
+ @G:
+ cd G:\apps\C\eject\eject-1.0b
+ *wcc386 Eject.c -i=h:\Programmi\programmazione\C\WATCOM\WATCOM1.5\h;h:\Prog&
+rammi\programmazione\C\WATCOM\WATCOM1.5\h\nt -w4 -e25 -zq -od -d2 -6r -bt=nt&
+ -mf
+
+G:\apps\C\eject\eject-1.0b\eject_util.obj : G:\apps\C\eject\eject-1.0b\eject&
+_util.c .AUTODEPEND
+ @G:
+ cd G:\apps\C\eject\eject-1.0b
+ *wcc386 eject_util.c -i=h:\Programmi\programmazione\C\WATCOM\WATCOM1.5\h;h:&
+\Programmi\programmazione\C\WATCOM\WATCOM1.5\h\nt -w4 -e25 -zq -od -d2 -6r -&
+bt=nt -mf
+
+G:\apps\C\eject\eject-1.0b\Win_error.obj : G:\apps\C\eject\eject-1.0b\Win_er&
+ror.c .AUTODEPEND
+ @G:
+ cd G:\apps\C\eject\eject-1.0b
+ *wcc386 Win_error.c -i=h:\Programmi\programmazione\C\WATCOM\WATCOM1.5\h;h:\&
+Programmi\programmazione\C\WATCOM\WATCOM1.5\h\nt -w4 -e25 -zq -od -d2 -6r -b&
+t=nt -mf
+
+G:\apps\C\eject\eject-1.0b\Win_IOCTL.obj : G:\apps\C\eject\eject-1.0b\Win_IO&
+CTL.c .AUTODEPEND
+ @G:
+ cd G:\apps\C\eject\eject-1.0b
+ *wcc386 Win_IOCTL.c -i=h:\Programmi\programmazione\C\WATCOM\WATCOM1.5\h;h:\&
+Programmi\programmazione\C\WATCOM\WATCOM1.5\h\nt -w4 -e25 -zq -od -d2 -6r -b&
+t=nt -mf
+
+G:\apps\C\eject\eject-1.0b\Win_ver.obj : G:\apps\C\eject\eject-1.0b\Win_ver.&
+c .AUTODEPEND
+ @G:
+ cd G:\apps\C\eject\eject-1.0b
+ *wcc386 Win_ver.c -i=h:\Programmi\programmazione\C\WATCOM\WATCOM1.5\h;h:\Pr&
+ogrammi\programmazione\C\WATCOM\WATCOM1.5\h\nt -w4 -e25 -zq -od -d2 -6r -bt=&
+nt -mf
+
+G:\apps\C\eject\eject-1.0b\eject.exe : G:\apps\C\eject\eject-1.0b\DOS_error.&
+obj G:\apps\C\eject\eject-1.0b\Eject.obj G:\apps\C\eject\eject-1.0b\eject_ut&
+il.obj G:\apps\C\eject\eject-1.0b\Win_error.obj G:\apps\C\eject\eject-1.0b\W&
+in_IOCTL.obj G:\apps\C\eject\eject-1.0b\Win_ver.obj G:\apps\C\eject\eject-1.&
+0b\eject.h G:\apps\C\eject\eject-1.0b\ioctl.h .AUTODEPEND
+ @G:
+ cd G:\apps\C\eject\eject-1.0b
+ @%write eject.lk1 FIL DOS_error.obj,Eject.obj,eject_util.obj,Win_error.obj,&
+Win_IOCTL.obj,Win_ver.obj
+ @%append eject.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b eject.imp 
+ @%append eject.lk1 LIBR eject.imp
+!endif
+!ifneq BLANK ""
+ @%append eject.lk1 op resource=
+!endif
+ *wlink name eject d all SYS nt op m op maxe=25 op q op symf @eject.lk1
+
